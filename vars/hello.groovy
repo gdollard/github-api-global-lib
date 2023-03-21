@@ -4,7 +4,7 @@ def sayHello(Map config = [:]) {
 
 def saySomethingElse(message="Nothing to say!") {
     sh "echo ${message}"
-    if( fileExists('file.txt')) {
+    if( fileExists('lib')) {
         echo 'File found!'
     } else {
         echo 'File not found!'
