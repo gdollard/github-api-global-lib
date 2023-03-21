@@ -4,7 +4,7 @@ def sayHello(Map config = [:]) {
 
 def scanStuff(Map config = [:]) {
     config.message ? echo '${config.message}' : echo 'Scanning...'
-    if( fileExists(config.lib)) {
+    if( fileExists(config.dirToScan)) {
         echo 'File found!'
     } else {
         echo 'File not found!'
