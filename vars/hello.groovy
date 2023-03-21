@@ -4,7 +4,7 @@ def sayHello(Map config = [:]) {
 
 def scanStuff(Map config = [:]) {
     def msg = config.message ? config.message : 'Scanning without label....'
-     echo '${msg}'
+     echo " '${msg}' "
      if (config.dirToScan) {
         if (fileExists(config.dirToScan)) {
             echo 'File found!'
