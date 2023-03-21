@@ -4,6 +4,7 @@ def sayHello(Map config = [:]) {
 
 def scanStuff(Map config = [:]) {
     def msg = config.message ? config.message : 'Scanning without label....'
+    keepPrivate()
      echo msg
      if (config.dirToScan) {
         if (fileExists(config.dirToScan)) {
@@ -14,5 +15,8 @@ def scanStuff(Map config = [:]) {
     } else {
         echo 'No dir passed, nothing to scan!'
     }
-    
+}
+
+private def keepPrivate() {
+    echo 'Something Private'
 }
