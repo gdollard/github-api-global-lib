@@ -3,6 +3,6 @@ def sayHello(Map config = [:]) {
 }
 
 def saySomehingElse(message) {
-    //def msg = message ? message : "Nada to say!"
-    sh "echo Waaaaaaaa"
+    def msg = message ? message : "Nada to say!"
+    sh "echo ${msg}"
 }
