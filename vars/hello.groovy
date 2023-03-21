@@ -3,10 +3,16 @@ def sayHello(Map config = [:]) {
 }
 
 def scanStuff(Map config = [:]) {
-    config.message ? echo '${config.message}' : echo 'Scanning...'
-    if( fileExists(config.dirToScan)) {
-        echo 'File found!'
+    def msg = config.message ? config.message : 'Scanning without label....'
+     echo '${msg}'
+     if (config.dirToScan) {
+        if (fileExists(config.dirToScan)) {
+            echo 'File found!'
+        } else {
+            echo 'File not found!'
+        }
     } else {
-        echo 'File not found!'
+        echo 'No dir passed, nothing to scan!'
     }
+    
 }
