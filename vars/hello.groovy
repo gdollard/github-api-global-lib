@@ -2,9 +2,9 @@ def sayHello(Map config = [:]) {
     sh "echo Hello ${config.name}. Today is ${config.dayOfWeek}."
 }
 
-def saySomethingElse(message="Nothing to say!") {
-    sh "echo ${message}"
-    if( fileExists('lib')) {
+def scanStuff(Map config = [:]) {
+    config.message ? echo '${config.message}' : echo 'Scanning...'
+    if( fileExists(config.lib)) {
         echo 'File found!'
     } else {
         echo 'File not found!'
